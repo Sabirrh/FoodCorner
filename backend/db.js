@@ -1,7 +1,8 @@
 // jshint esversion:6
+ require('dotenv').config();
 const mongoose = require('mongoose');
-// Replace with your MongoDB URI
-const data = "mongodb+srv://foodApp:food12@fooddetails.ulwy7.mongodb.net/foodappMern?retryWrites=true&w=majority&appName=foodDetails";
+console.log("Loaded MONGO_URI:", process.env.MONGO_URI); 
+const data = process.env.MONGO_URI;
 
 const mongoDB = async () => {
     try {
