@@ -30,7 +30,7 @@ const Signup = () => {
       setCredentials({ name: "", email: "", password: "", geolocation: "" });
       navigate('/');
     } else {
-      alert(json.error || 'Enter valid credentials');
+      toast(json.error || 'Enter valid credentials');
     }
   } catch (error) {
     console.error('Error during signup:', error);
