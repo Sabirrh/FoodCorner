@@ -1,24 +1,13 @@
-
 const express = require('express');
 const cors = require('cors');
-
+require('dotenv').config();
 const app = express();
 const mongoDB = require('./db');
 const Middleware = require('./middleware/middleware');
-
+const PORT = process.env.PORT || 5000;
 mongoDB();
 //Middleware
 app.use(cors());
-
-// Middleware to allow specific headers
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, X-Requested-With, Content-Type, Accept"
-//     );
-//     next();
-// });
 app.use(Middleware)
 app.use(express.json());
 
@@ -33,6 +22,6 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(5000, () => {
-    console.log("App is running at port 5000");
+app.listen(PORT, () => {
+    console.log(`App is running at port ${PORT}`);
 });

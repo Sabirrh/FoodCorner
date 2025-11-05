@@ -1,7 +1,7 @@
 // jshint esversion:6
  require('dotenv').config();
 const mongoose = require('mongoose');
-console.log("Loaded MONGO_URI:", process.env.MONGO_URI); 
+// console.log("Loaded MONGO_URI:", process.env.MONGO_URI); 
 const data = process.env.MONGO_URI;
 
 const mongoDB = async () => {
